@@ -1,0 +1,18 @@
+services:
+    producto_form:
+         factory_service: form.factory
+         factory_method: createNamed
+         class: Symfony\Component\Form\Form
+         arguments:
+              - producto
+              - producto_form
+
+    producto_type:
+         class: Curso\mainBundle\Form\Type\ProductoType
+         tags:
+              - {name : form.type, alias: producto_form}
+
+    producto_handler:
+         class: Curso\mainBundle\Form\Handler\ProductoHandler
+         arguments: [@producto_form, @request, @doctrine.orm.entity_manager]
+         scope: request
