@@ -1,0 +1,228 @@
+
+{{ form_start(form,{'enctype':'multipart/form-data'}) }}
+<div>{{ form_errors(form) }}</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 titre-page">
+            <h3>NOUVELLE ANNONCE <small>Voiture d'occasion</small></h3>
+            <h4><i class="fa fa-square" aria-hidden="true"></i> ETAPE > #1</h4>
+        </div>
+
+        <div class="col-xs-12 panel-group" id="accordion">
+            <div class="btn-group btn-group-3 input-group col-xs-12 btn-group-justified" data-toggle="buttons" id="type-vehicule">
+                <label class="btn btn-primary active">
+                    <input type="radio" name="options" class="options" id="op1" value="voiture" checked="checked"/><i class="fa fa-car"></i>
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" class="options" id="op2" value="moto"/><i class="fa fa-motorcycle"></i>
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" class="options" id="op3" value="truck"/><i class="fa fa-truck"></i>
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" class="options" id="op4" value="bateau"/><i class="fa fa-ship"></i>
+                </label>
+                <label class="btn btn-primary">
+                    <input type="radio" name="options" class="options" id="op5" value="piece"/><i class="fa fa-cogs"></i>
+                </label>
+            </div><!-- fin #type-vehicule-->
+            <div class="panel panel-default" id="location">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#aaccordion" href="#ac1"><i class="fa fa-map-pin"></i><span> LOCALISATION</span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac1">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <select class="form-control" id="villes">
+                                <option>Sélectionner une Ville ...</option>
+                                <optgroup label="LES GRANDES VILLES">
+                                    <option id="distrito" value="790">Casablanca</option>
+                                    <option id="distrito" value="807">Rabat</option>
+                                    <option id="distrito" value="482">Marrakech</option>
+                                    <option id="barrio" value="86">Agadir</option>
+                                    <option id="barrio" value="1167">Fès</option>
+                                    <option id="barrio" value="1361">Tanger</option>
+                                </optgroup>
+                                <optgroup label="LES VILLES IMPORTANTES">
+                                    <option id="" value="1221">Al Hoceima</option>
+                                    <option id="" value="994">Béni Mellal</option>
+                                    <option id="barrio" value="859">El Jadida</option>
+                                    <option id="" value="1088">Errachidia</option>
+                                    <option id="barrio" value="329">Kénitra</option>
+                                    <option id="" value="1144">Khénifra</option>
+                                    <option id="" value="403">Khouribga</option>
+                                    <option id="" value="1412">Larache</option>
+                                    <option id="barrio" value="1043">Meknes</option>
+                                    <option id="barrio" value="794">Mohammedia</option>
+                                    <option id="barrio" value="762">Nador</option>
+                                    <option id="" value="147">Ouarzazate</option>
+                                    <option id="barrio" value="679">Oujda</option>
+                                    <option id="barrio" value="910">Safi</option>
+                                    <option id="barrio" value="463">Settat</option>
+                                    <option id="barrio" value="808">Salé</option>
+                                    <option id="" value="1346">Taza</option>
+                                    <option id="barrio" value="1444">Tétouan</option>
+                                </optgroup>
+                                <optgroup label="LES AUTRES VILLES">
+                                    <option id="autres" value="9999">Choisissez une autre ville</option>
+                                </optgroup>
+                            </select>
+                        </div>
+
+                        {{ form_widget(form.Region,{ 'attr': {'class': 'form-control'}}) }}
+                        {{ form_widget(form.Provincia,{ 'attr': {'class': 'form-control'}}) }}
+                        {{ form_widget(form.Ciudad,{ 'attr': {'class': 'form-control'}}) }}
+                        {{ form_widget(form.Distrito,{ 'attr': {'class': 'form-control'}}) }}
+                        {{ form_widget(form.Barrio,{ 'attr': {'class': 'form-control'}}) }}
+                        <a class="col-xs-12 text-right" id="precision-loca">Pour plus de précision<small> (Quartier...) </small><i class="fa fa-chevron-circle-down"></i></a>
+                        <span class="help-block">
+                            <i class="fa fa-info-circle"></i> La localisation de votre véhicule est nécessaire pour faciliter la recherche.
+                        </span>
+                    </div>
+                </div>
+            </div><!-- fin #localisation -->
+
+            <div class="panel panel-default" id="description">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#aaccordion" href="#ac2"><i class="fa fa-trello"></i><span> DESCRIPTION</span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac2">
+                    <div class="panel-body">
+                        <label class="col-xs-12">Prix </label>
+                        <div class="input-group col-xs-1" id="div-prix">
+                            {{ form_widget(form.prix,{ 'attr': {'class': 'form-control','maxlength':'8'}}) }}
+                            <span class="input-group-addon">DH</span>
+                        </div>
+                        <div class="checkbox" id="id-negociable">
+                            <label>{{ form_widget(form.negociable,{ 'attr': {'class': ''}}) }} Prix negociable</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12">Titre </label>
+                            {{ form_widget(form.titre,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12">Description </label>
+                            {{ form_widget(form.description,{ 'attr': {'class': 'form-control', 'rows':'8'}}) }}
+                        </div>
+                        <span class="help-block">
+                            <i class="fa fa-info-circle"></i> Pour une meilleure attractivité de votre annonce, indiquez un prix raisonnable, un titre explicatif et une descriptcion compréhensible.
+                        </span>
+                    </div>
+                </div>
+            </div><!-- fin #description -->
+
+            <div class="panel panel-default" id="images">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#aaccordion" href="#collapse3"><i class="fa fa-camera-retro"></i><span> PHOTOS</span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="col-xs-12">
+                            <div class="input-group">
+                                 <span class="input-group-btn">
+                                     <span class="btn btn-primary btn-file">
+                                         <i class="fa fa-file-image-o"></i>
+                                         1<span>ère </span> Photo {{ form_widget(form.photo1,{ 'attr': {'class': 'form-control', 'accept':'image/jpeg,image/gif,image/png,image/bmp'}}) }}
+
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" readonly>
+                            </div>
+                            <span id="annonce_photo1e" class="error-img"></span>
+                            <br>
+                            <div class="input-group">
+                                 <span class="input-group-btn">
+                                     <span class="btn btn-primary btn-file">
+                                         <i class="fa fa-file-image-o"></i>
+                                         2<span>ème</span> Photo {{ form_widget(form.photo2,{ 'attr': {'class': 'form-control', 'accept':'image/jpeg,image/gif,image/png,image/bmp'}}) }}
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" readonly>
+                            </div>
+                            <span id="annonce_photo2e" class="error-img"></span>
+                            <br>
+                            <div class="input-group">
+                                 <span class="input-group-btn">
+                                     <span class="btn btn-primary btn-file">
+                                         <i class="fa fa-file-image-o"></i>
+                                         3<span>ème</span> Photo {{ form_widget(form.photo3,{ 'attr': {'class': 'form-control', 'accept':'image/jpeg,image/gif,image/png,image/bmp'}}) }}
+                                    </span>
+                                </span>
+                                <input type="text" class="form-control" readonly>
+                            </div>
+                            <span id="annonce_photo3e" class="error-img"></span>
+                            <span class="help-block">
+                                <i class="fa fa-info-circle"></i> Sélectionner une ou plusieurs photos que vous aurez prises de votre véhicule.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- fin #images -->
+            <div id="suivant-annonce">
+                <div class="col-xs-12 alert alert-danger" id="validation">
+                    <strong>S'il vous plaît remplissez les champs suivants : <br></strong>
+                    <div id="text-validation"></div>
+                </div>
+                {{ form_widget(form.ValiderVVoiture,{'attr':{'class':'btn btn-info col-xs-12 col-sm-3 col-sm-offset-9 col-md-2 col-md-offset-10 btn-lg'}}) }}
+
+            </div>
+
+<br><br>
+            <div id="itemsFormVoiture">
+                {{ form_widget(form.idRegion) }}
+                {{ form_widget(form.idProvincia) }}
+                {{ form_widget(form.idCiudad) }}
+                {{ form_widget(form.idDistrito) }}
+                {{ form_widget(form.idBarrio) }}
+                {{ form_widget(form.tVehicule,{ 'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(form.idUser,{ 'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(form.visites,{ 'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(form.dCreation,{ 'attr': {'class': 'cachee'}}) }}
+                {{ form_widget(form.hCreation,{ 'attr': {'class': 'cachee'}}) }}
+                {{ form_widget(form.unix,{ 'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(form.supprimer,{ 'attr': {'class': 'cachee'}}) }}
+            </div>
+
+        </div><!-- fin #accordion -->
+    </div><!-- fin .row -->
+</div><!-- fin .container -->
+{{ form_end(form) }}
+
+
+
+
+{#
+ <select class="form-control" name="annonce[idRegion]" id="annonce_idRegion">
+    <option>REGION</option>
+    <option class="divider"></option>
+    {% for region in regions %}
+        <option value="{{ region.id }}">{{ region.regionFr }}</option>
+    {% endfor %}
+</select>
+
+<div class="form_error">{{ form_errors(form) }}</div>
+
+<div class="form_bloque">
+    <div class="form_error">{{ form_errors(form.nombre) }}</div>
+    <div class="form_label">{{ form_label(form.nombre) }}</div>
+    <div class="form_input">{{ form_widget(form.nombre) }}</div>
+</div>
+
+<div class="form_bloque">
+    {{ form_widget(form.Guardar) }}
+</div>
+#}
+
+
+
+{#
+{{ form_start(form2) }}
+<div>{{ form_errors(form2) }}</div>
+{{ form_end(form2) }}
+#}

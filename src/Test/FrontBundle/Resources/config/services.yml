@@ -1,0 +1,46 @@
+services:
+    voiture_form:
+         factory_service: form.factory
+         factory_method: createNamed
+         class: Symfony\Component\Form\Form
+         arguments:
+              - voiture
+              - voiture_form
+
+    voiture_type:
+         class: Test\FrontBundle\Form\Type\voitureType
+         tags:
+              - {name : form.type, alias: voiture_form}
+
+    voiture_handler:
+         class: Test\FrontBundle\Form\Handler\VehiculeHandler
+         arguments: [@voiture_form, @request, @doctrine.orm.entity_manager]
+         scope: request
+
+    annonce_form:
+         factory_service: form.factory
+         factory_method: createNamed
+         class: Symfony\Component\Form\Form
+         arguments:
+              - annonce
+              - annonce_form
+
+    annonce_type:
+         class: Test\FrontBundle\Form\Type\annonceType
+         tags:
+              - {name : form.type, alias: annonce_form}
+
+    annonce_handler:
+         class: Test\FrontBundle\Form\Handler\VehiculeHandler
+         arguments: [@annonce_form, @request, @doctrine.orm.entity_manager]
+         scope: request
+
+
+
+
+
+
+
+#    test_front.example:
+#        class: Test\FrontBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

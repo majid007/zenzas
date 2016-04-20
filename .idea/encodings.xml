@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Controller/DefaultController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Controller/LocationController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Form/Handler/VehiculeHandler.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Form/Type/annonceType.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Form/Type/voitureType.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/config/routing.yml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Default/annonces.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Default/index.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Default/newAnnonce.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Default/newVoiture.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Includes/Default/Header.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Includes/IndexBody.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Includes/newAnnonceBody.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Test/FrontBundle/Resources/views/Includes/newVoitureBody.html.twig" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/bundles/testfront/js/functions.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/bundles/testfront/js/script.js" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,112 @@
+{{ form_start(form2) }}
+<div>{{ form_errors(form2) }}</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 titre-page">
+            <h3>NOUVELLE ANNONCE <small>Voiture d'occasion</small></h3>
+            <h4><i class="fa fa-square" aria-hidden="true"></i> ETAPE > #2</h4><br>
+        </div>
+        <div class="col-xs-12 panel-group" id="accordion">
+            <div class="panel panel-default" id="data-voiture">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ac5"><i class="fa fa-car"></i><span> DONNEES<small> VOITURE</small></span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac5">
+                    <div class="panel-body">
+                        <div class="well well-sm">
+                            {{ form_widget(form2.idMarca,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="well well-sm">
+                            {{ form_widget(form2.Modelo,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="well well-sm">
+                            {{ form_widget(form2.carrosserie,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="well well-sm">
+                            <div class='input-group'>
+                                {{ form_widget(form2.puissance,{ 'attr': {'class': 'form-control','min':'4', 'max':'50', 'placeholder':'Puissance fiscal en (cv)'}}) }}
+                                <span class="input-group-addon" >cv</span>
+                            </div>
+                        </div>
+                        <div class="well well-sm">
+                            {{ form_widget(form2.carburant,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="well well-sm">
+                            <div class='input-group date' id='divdFabrication' data-date-format="yyyy" data-date-viewmode="years">
+                                {{ form_widget(form2.dFabrication,{ 'attr': {'class': 'form-control disabled', 'readonly':'readonly', 'placeholder':'Année de fabrication'}}) }}
+                                <span class="input-group-addon" ><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+                        <div class="well well-sm">
+                            <div class='input-group date' id='divdMatriculation' data-date-format="yyyy" data-date-viewmode="years">
+                                {{ form_widget(form2.dMatriculation,{ 'attr': {'class': 'form-control disabled', 'readonly':'readonly', 'placeholder':'Année d’immatriculation'}}) }}
+                                <span class="input-group-addon" ><span class="glyphicon glyphicon-calendar"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- fin #data-voiture -->
+            <div class="panel panel-default" id="data-motor">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ac6"><i class="fa fa-cogs"></i><span> DONNEES<small> MOTEUR</small></span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac6">
+                    <div class="panel-body">
+                        <div class="well well-sm">
+                            {{ form_widget(form2.idTransmission,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="well well-sm">
+                            <div class='input-group'>
+                                {{ form_widget(form2.version,{ 'attr': {'class': 'form-control'}}) }}
+                                <span class="input-group-addon" >cm³</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- fin #data-motor -->
+            <div class="panel panel-default" id="data-motor">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ac7"><i class="fa fa-tachometer"></i><span> ETAT<small> VOITURE</small></span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac7">
+                    <div class="panel-body">
+                        <div class="well well-sm">
+                            <div class='input-group'>
+                                {{ form_widget(form2.km,{ 'attr': {'class': 'form-control'}}) }}
+                                <span class="input-group-addon" >km</span>
+                            </div>
+                        </div>
+                        <div class="well well-sm">
+                            {{ form_widget(form2.portes,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class='well well-sm'>
+                            {{ form_widget(form2.sieges,{ 'attr': {'class': 'form-control','min':'2', 'max':'15', 'placeholder':'Sièges'}}) }}
+                        </div>
+
+                    </div>
+                </div>
+            </div><!-- fin #data-motor -->
+
+
+
+
+
+
+            <div class="col-xs-12">
+                {{ form_widget(form2.idAnnonce,{ 'attr': {'value' : id }}) }}
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ form_end(form2) }}
+
+{#{{  id }}#}

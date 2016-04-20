@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/*General*/
+hr{background: #00b8cc; height: 1px;}
+
+/*paralax*/
+section{margin-top: 0px;}
+.contenedor { width: 100%; height: 100%; margin: 0 auto;  background: rgba(0,0,0,0.3); color: white; padding-top:30px; }
+.bloque.parallax{border-bottom: 2px solid rgba(0,0,0,0.6); height: 600px; background-repeat: no-repeat; background-position: 50% 50%; background-size: cover; background-attachment: fixed; }
+.parallax.imagen { background-image: url("../img/ruta.jpg"); }
+
+
+
+#div-round1{margin: 0px;  margin-top: 75px; padding: 0px; min-width: 250px;}
+#div-round1 > div{ padding:0px;}
+#div-round1 > div > h2{font-size: 17px; margin: 0px; padding: 0px; padding-top: 8px; padding-right:10px;}
+#div-round1 > div > h2 > span { font-size: 24px; }
+#div-round1 > div > i{ font-size: 46px; padding: 5px; margin: 3px; }
+
+
+#div-round2{  margin-top: 70px; min-width: 280px; padding: 0px;}
+#div-round2 > div{ padding:0px;}
+#div-round2 > div > h2{font-size: 19px; margin: 0px; padding: 0px; padding-top: 3px; padding-left:10px;}
+#div-round2 > div > i{ font-size: 50px; padding: 5px; margin: 3px; }
+
+
+
+#div-round3{margin: 0px;  margin-top: 55px; padding: 0px; min-width: 260px;}
+#div-round3 i{font-size: 56px;  padding: 0px;}
+
+.div-text-in2{margin: 0px; padding: 0px; max-width: 192px; min-width: 192px;}
+.div-icno-in-rg{max-width: 70px; min-width: 70px; border-right:2px solid white; }
+.div-icno-in-lf{max-width: 57px; min-width: 57px; border-left:2px solid white; }
+/*
+
+
+#div-round2{ border: 1px solid white; padding: 0px; margin: 40px; max-width: 245px; min-width: 245px;}
+#div-round2 > div{ padding: 0px;}
+#div-round2 > div > h2{font-size: 17px; margin: 0px; padding: 0px; padding-top: 10px;}
+#div-round2 > div > i{ font-size: 40px; padding: 5px; margin: 3px;}
+
+.bloque > .contenedor > .row > #div-round3 > h1 { font-size: 28px;  padding-top: 50px; min-width: 260px}
+.bloque > .contenedor > .row > #div-round3 > h1 > b{font-size:56px; position: relative; top:0px;}
+.bloque > .contenedor > .row > #div-round3 > h1 > span{ position: relative; top: -36px;}
+
+*/
+
+
+
+/*Conseil*/
+#conseil{ background: white; color: #00b8cc; padding-top: 25px; padding-bottom: 25px; margin: 0px; font-weight: bold}
+.sub-conseil{font-size: 14px; color: silver;}
+.iconos{color:#00b8cc;}
+.sub-conseil{ position: relative; top: -5px;}
+
+#icon-tints > div{max-width: 135px; margin: 0% auto;}
+#icon-camera{font-size: 96px;}
+#icon-tint1{font-size: 40px; position: relative; }
+#icon-tint2{font-size: 56px;}
+#icon-tint3{font-size: 32px; position: relative;}
+#icon-tag{ font-size: 96px;}
+#icon-newspaper{font-size:98px;}
+#icon-magic{ font-size: 96px;}
+#icon-filter{ font-size: 96px;}
+#icon-lock{ font-size: 96px;}
+#icon-lock > span{ font-size: 30px; position:relative; top: -10px;  }
+#icon-cubes{ font-size: 96px;}
+
+
+#preparation{ color: white !important; background: #00b8cc; border-bottom: 2px dashed white; padding-bottom: 20px;}
+#preparation .sub-conseil, #preparation .iconos{color: white}
+#preparation small{color: rgba(235,235,235,1);}
+#preparation h2{margin-bottom: 35px;}
+
+#redaction{ padding-bottom: 20px; }
+#redaction h2{margin-bottom: 35px;}
+
+#optimisation{ color: white !important; background: #00b8cc; border-top: 2px dashed white;  border-bottom: 2px dashed white; padding-bottom: 20px;}
+#optimisation .sub-conseil, #optimisation .iconos{color: white}
+#optimisation small{color: rgba(235,235,235,1);}
+#optimisation h2{margin-bottom: 35px;}
+
+#securite{ padding-bottom: 20px;}
+
+#gold{ color: white !important; background: #00b8cc; border-top: 2px dashed white; padding-bottom: 20px;}
+#gold .sub-conseil, #gold .iconos{color: white}
+#gold small{color: rgba(235,235,235,1);}
+
+
+
+
+
+
+@media (min-width: 768px){
+    .grp-icon > div{ max-width: 450px; margin: 0% auto;}
+    .grp-icon > div > div{margin-bottom: 20px;}
+}
+
+
+
+
+/*
+
+
+.bloque h1 {  margin: 0; font-size: 30px; padding-top: 350px;}
+.bloque h1 > strong { color: rgba(255,255,255,1); width: 100%; height: 50px;}
+.bloque h1 > strong > b{ font-size: 70px;}
+.bloque h1 > strong > b > span{font-size: 30px; position: relative; top:-26px; left:0px}
+
+
+
+#div-grp-btn-cat{ min-width: 220px}
+#div-img{position: relative;}
+#div-catg{position: absolute; top: 15px; left: 5px;}
+#div-catg > div > a {background-color: rgba(250,250,250,0.60); background-image: url("../img/cat_vehi_xs.png"); background-repeat: no-repeat;  width: 43px; height: 40px;}
+#div-catg > div > a:hover {background-color: rgba(100,100,100,0.3); }
+
+#div-catg > div > #a1{background-position:   -3px -7px ; }
+#div-catg > div > #a2{background-position:  -64px -7px ; }
+#div-catg > div > #a3{background-position: -126px -7px ; width: 51px;}
+#div-catg > div > #a4{background-position: -195px -7px ; }
+#div-catg > div > #a5{background-position: -255px -7px ; }
+
+#div-catg > div > #a1:hover{background-position:   -3px -82px ; }
+#div-catg > div > #a2:hover{background-position:  -64px -82px ; }
+#div-catg > div > #a3:hover{background-position: -126px -82px ; }
+#div-catg > div > #a4:hover{background-position: -195px -82px ; }
+#div-catg > div > #a5:hover{background-position: -255px -82px ; }
+*/

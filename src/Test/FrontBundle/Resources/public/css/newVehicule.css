@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/*General*/
+.cachee{width: 0px !important; height: 0px !important; margin: 0px; padding: 0px; border: none; visibility: hidden }
+.form-control{height: 36px;}
+#accordion > .panel-default {margin-bottom: 20px}
+#accordion .panel-heading > .panel-title > a > i {font-size: 22px; margin-right: 5px; color: grey; width: 20px;}
+#accordion .panel-heading > .panel-title > a > .peq{font-size: 14px; float: right; margin-top: 7px; color: grey;}
+#location, #description, #images{border-left: 4px solid #1b6d85;  border-radius: 3px !important;}
+#accordion .panel-heading > .panel-title > a:hover > i, #accordion .panel-heading > .panel-title > a:focus > i{color:#1b6d85;}
+#accordion .panel-heading > .panel-title > a:focus, #accordion .panel-heading > .panel-title > a:hover{color:#1b6d85; text-decoration: none;}
+.help-block{font-size: 13px; font-style: italic;}
+.help-block > i{color:#1b6d85; font-size: 24px}
+
+/*titre page*/
+.titre-page > h4 {color: #1b6d85; font-weight: bold;}
+
+/*Type vehcule*/
+#type-vehicule .btn{ color: white; background: #00b8cc; font-size: 24px; height: 50px;}
+#type-vehicule .btn-primary.active, #type-vehicule .btn-primary:active, #type-vehicule .btn-primary:hover { color: white; background-color: #1b6d85; border-color: #204d74; }
+#type-vehicule{margin-top: 10px; margin-bottom: 25px; min-width: 250px;}
+
+/*Localisation*/
+#location select{margin-top: 15px; margin-bottom: 15px;}
+#annonce_Region, #annonce_Provincia, #annonce_Ciudad, #annonce_Distrito, #annonce_Barrio{display: none;}
+#precision-loca{display: none; cursor: pointer; font-size: 13px;}
+#autres{color: darkgreen; font-weight: bolder}
+
+/*Description*/
+#annonce_prix{min-width: 100px !important; max-width: 100px !important;}
+#id-negociable{position: relative; top: -5px !important;}
+
+
+
+/*images*/
+.btn-file { position: relative; overflow: hidden; height: 36px;  background: #00b8cc; font-size: 15px; min-width: 130px;}
+.btn-file:hover{ background: #1b6d85}
+.btn-file > i{ font-size: 18px;}
+.btn-file input[type=file] { position: absolute; top: 0; right: 0; min-width: 100%; min-height: 100%; font-size: 100px; text-align: right;  filter: alpha(opacity=0); opacity: 0; background: red; cursor: inherit; display: block;}
+input[readonly] { background-color: white !important;  cursor: text !important; }
+.btn-file > span{position: relative; top:-5px; font-size: 12px;}
+.error-img{display: none; font-size: 13px; font-style: italic; padding: 5px; color: #a94442; background-color: #f2dede; border-color: #ebccd1; border-radius: 4px; margin-top: 5px; word-wrap: break-word;}
+
+/*Btn suivant*/
+#suivant-annonce > .btn-info{ background: #00b8cc; margin-top: 5px; }
+#suivant-annonce > .btn-info:hover{ background: #1b6d85;}
+
+/*Validation*/
+#validation{ margin-top:20px; display: none;}
+
+@media (min-width: 768px) {
+
+}
+
+
+
+
+/*
+
+
+.bloque h1 {  margin: 0; font-size: 30px; padding-top: 350px;}
+.bloque h1 > strong { color: rgba(255,255,255,1); width: 100%; height: 50px;}
+.bloque h1 > strong > b{ font-size: 70px;}
+.bloque h1 > strong > b > span{font-size: 30px; position: relative; top:-26px; left:0px}
+
+
+
+#div-grp-btn-cat{ min-width: 220px}
+#div-img{position: relative;}
+#div-catg{position: absolute; top: 15px; left: 5px;}
+#div-catg > div > a {background-color: rgba(250,250,250,0.60); background-image: url("../img/cat_vehi_xs.png"); background-repeat: no-repeat;  width: 43px; height: 40px;}
+#div-catg > div > a:hover {background-color: rgba(100,100,100,0.3); }
+
+#div-catg > div > #a1{background-position:   -3px -7px ; }
+#div-catg > div > #a2{background-position:  -64px -7px ; }
+#div-catg > div > #a3{background-position: -126px -7px ; width: 51px;}
+#div-catg > div > #a4{background-position: -195px -7px ; }
+#div-catg > div > #a5{background-position: -255px -7px ; }
+
+#div-catg > div > #a1:hover{background-position:   -3px -82px ; }
+#div-catg > div > #a2:hover{background-position:  -64px -82px ; }
+#div-catg > div > #a3:hover{background-position: -126px -82px ; }
+#div-catg > div > #a4:hover{background-position: -195px -82px ; }
+#div-catg > div > #a5:hover{background-position: -255px -82px ; }
+*/

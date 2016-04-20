@@ -1,0 +1,85 @@
+test_front_homepage:
+    path:     /
+    defaults: { _controller: TestFrontBundle:Default:index }
+
+test_front_newAnnonce:
+    path:     /annonce/vehicule
+    defaults: { _controller: TestFrontBundle:Annonce:vehicule }
+
+test_front_newVoiture:
+    path:     /annonce/vehicule/voiture/{id}
+    defaults: { _controller: TestFrontBundle:Voiture:newVoiture }
+
+test_front_provinces:
+    path:     /provinces/{idRegion}
+    defaults: { _controller: TestFrontBundle:Location:provincesFrByRegion}
+
+test_front_provincesar:
+    path:     /provincesar/{idRegion}
+    defaults: { _controller: TestFrontBundle:Location:provincesArByRegion}
+
+test_front_villes:
+    path:     /villes/{idProvince}
+    defaults: { _controller: TestFrontBundle:Location:villesFrByProvince}
+
+test_front_arrondissements:
+    path:     /arrondissements/{idVille}
+    defaults: { _controller: TestFrontBundle:Location:arrondissementsFrByVille}
+
+test_front_quartiers:
+    path:     /quartiers/{idArrondissement}
+    defaults: { _controller: TestFrontBundle:Location:quartiersFrByArrondissement}
+
+test_front_modeles:
+    path:     /vehicule/voitures/{idMarque}
+    defaults: { _controller: TestFrontBundle:Voiture:modelesByMarque}
+
+
+
+
+
+
+
+
+
+
+
+#test_front_voitures:
+#    path:     /voitures
+#    defaults: { _controller: TestFrontBundle:Voiture:voitures }
+
+#test_front_utilitaires:
+#    path:     /utilitaires
+#    defaults: { _controller: TestFrontBundle:Utilitaire:utilitaires }
+
+#test_front_motos:
+#    path:     /motos
+#    defaults: { _controller: TestFrontBundle:Moto:motos }
+
+#test_front_bateaux:
+#    path:     /bateaux
+#    defaults: { _controller: TestFrontBundle:Bateau:bateaux }
+
+#test_front_pieces:
+#    path:     /pieces
+#    defaults: { _controller: TestFrontBundle:Piece:pieces }
+
+
+
+
+
+#test_front_annoncespage:
+#    path:     /annonces
+#    defaults: { _controller: TestFrontBundle:Default:annonces }
+
+#test_front_vendrepage:
+#    path:     /vendre
+#    defaults: { _controller: TestFrontBundle:Default:vendre }
+
+#test_front_acheterpage:
+#    path:     /acheter
+#    defaults: { _controller: TestFrontBundle:Default:acheter }
+
+#test_front_louerpage:
+#    path:     /louer
+#    defaults: { _controller: TestFrontBundle:Default:louer }
