@@ -35,6 +35,8 @@ $(document).ready(function(){
 
     $('#voiture_idMarca').change(changeMarque);
 
+    $('#divdFabrication').datetimepicker({format: 'YYYY-MM-DD'});
+    $('#divdMatriculation').datetimepicker({format: 'YYYY-MM-DD'});
 
     $(document).on('change', '.btn-file :file', function() {
         var input = $(this),
@@ -146,7 +148,6 @@ function resize(){
     if(w > 767 ){
         $('#nav').css('height','' );
         $('section').css('display','block');
-
         //if($('#div-grp-btn-cat').hasClass('btn-group-vertical')){$('#div-grp-btn-cat').removeClass('btn-group-vertical')}
     }
     else{
@@ -154,9 +155,7 @@ function resize(){
             $('#nav').css('height',$(window).height());
             $('section').css('display','none');
         }
-
         //if(!$('#div-grp-btn-cat').hasClass('btn-group-vertical')){$('#div-grp-btn-cat').addClass('btn-group-vertical')}
-
     }
 }
 
@@ -459,3 +458,4 @@ function changeMarque(){
         }
     })
 }
+

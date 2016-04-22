@@ -6,7 +6,7 @@
 #accordion > .panel-default {margin-bottom: 20px}
 #accordion .panel-heading > .panel-title > a > i {font-size: 22px; margin-right: 5px; color: grey; width: 20px;}
 #accordion .panel-heading > .panel-title > a > .peq{font-size: 14px; float: right; margin-top: 7px; color: grey;}
-#location, #description, #images{border-left: 4px solid #1b6d85;  border-radius: 3px !important;}
+#location, #description, #images, #data-voiture, #data-motor, #etat-voiture, #securite, #confort, #extras, #autres{border-left: 4px solid #1b6d85;  border-radius: 3px !important;}
 #accordion .panel-heading > .panel-title > a:hover > i, #accordion .panel-heading > .panel-title > a:focus > i{color:#1b6d85;}
 #accordion .panel-heading > .panel-title > a:focus, #accordion .panel-heading > .panel-title > a:hover{color:#1b6d85; text-decoration: none;}
 .help-block{font-size: 13px; font-style: italic;}
@@ -47,6 +47,29 @@ input[readonly] { background-color: white !important;  cursor: text !important; 
 
 /*Validation*/
 #validation{ margin-top:20px; display: none;}
+
+/*data_voiture*/
+#data-voiture label{margin-top: 20px;}
+#voiture_dMatriculation:disabled, #voiture_dFabrication:disabled{background: white;}
+#data-voiture select, #divdFabrication, #divdMatriculation, #id-puissance, #id-sieges{ margin-bottom: 10px;}
+
+/*data-motor*/
+#data-motor label{margin-top: 20px;}
+#data-voiture select, #id-transmission, #id-nbvitesses, #id-nbcylindres, #id-poids, #id-tmoteur, #id-consommation, #id-x-urbain, #id-urbain{ margin-bottom: 10px;}
+
+/*etat-voiture*/
+#etat-voiture label{margin-top: 20px; margin-bottom: 10px}
+#id-tapisserie, #id-colorint, #id-colorext, #id-km, #id-etat{margin-top: 10px;}
+#id-metallisee{margin-top: 0px;}
+
+/*securite*/
+#ac8 > .panel-body > label{margin-top: 30px;}
+#securite .checks > div{margin: 5px !important;}
+
+/*confort*/
+#ac9 > .panel-body > label{margin-top: 30px;}
+#confort .checks > div{margin: 5px !important;}
+
 
 @media (min-width: 768px) {
 
