@@ -15,37 +15,51 @@
                     </h4>
                 </div>
                 <div class="panel-collapse collapse" id="ac5">
-                    <div class="panel-body">
-                        <div class="well well-sm">
-                            {{ form_widget(form2.idMarca,{ 'attr': {'class': 'form-control'}}) }}
-                        </div>
-                        <div class="well well-sm">
-                            {{ form_widget(form2.Modelo,{ 'attr': {'class': 'form-control'}}) }}
-                        </div>
-                        <div class="well well-sm">
+                    <div class="panel-body ">
+                        <label class="col-xs-12">Marque et Modèle</label>
+                        <div class="col-xs-12 col-sm-6">{{ form_widget(form2.idMarca,{ 'attr': {'class': 'form-control col-xs-12'}}) }}</div>
+                        <div class="col-xs-12 col-sm-6">{{ form_widget(form2.Modelo,{ 'attr': {'class': 'form-control col-xs-12'}}) }}</div>
+                        <label class="col-xs-12">Carrosserie et Puissance Fiscal</label>
+                        <div class="col-xs-12 col-sm-6">
                             {{ form_widget(form2.carrosserie,{ 'attr': {'class': 'form-control'}}) }}
                         </div>
-                        <div class="well well-sm">
-                            <div class='input-group'>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class='input-group' id="id-puissance">
                                 {{ form_widget(form2.puissance,{ 'attr': {'class': 'form-control','min':'4', 'max':'50', 'placeholder':'Puissance fiscal en (cv)'}}) }}
                                 <span class="input-group-addon" >cv</span>
                             </div>
                         </div>
-                        <div class="well well-sm">
+                        <label class="col-xs-12">Carburant et Statut Douanier</label>
+                        <div class="col-xs-12 col-sm-6">
                             {{ form_widget(form2.carburant,{ 'attr': {'class': 'form-control'}}) }}
                         </div>
-                        <div class="well well-sm">
+                        <div class="col-xs-12 col-sm-6">
+                            {{ form_widget(form2.aduana,{ 'attr': {'class': 'form-control' }}) }}
+                        </div>
+                        <label class="col-xs-12">Années de Fabrication et Immatriculation</label>
+                        <div class="col-xs-12 col-sm-6">
                             <div class='input-group date' id='divdFabrication' data-date-format="yyyy" data-date-viewmode="years">
-                                {{ form_widget(form2.dFabrication,{ 'attr': {'class': 'form-control disabled', 'readonly':'readonly', 'placeholder':'Année de fabrication'}}) }}
+                                {{ form_widget(form2.dFabrication,{ 'attr': {'class': 'form-control', 'placeholder':'Année de fabrication', 'disabled':'', 'title':'Cliquer sur le calendrier pour modifier la date de fabrication'}}) }}
                                 <span class="input-group-addon" ><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
-                        <div class="well well-sm">
+                        <div class="col-xs-12  col-sm-6">
                             <div class='input-group date' id='divdMatriculation' data-date-format="yyyy" data-date-viewmode="years">
-                                {{ form_widget(form2.dMatriculation,{ 'attr': {'class': 'form-control disabled', 'readonly':'readonly', 'placeholder':'Année d’immatriculation'}}) }}
+                                {{ form_widget(form2.dMatriculation,{ 'attr': {'class': 'form-control', 'placeholder':'Année d’immatriculation','disabled':'', 'title':'Cliquer sur le calendrier pour modifier la date d’immatriculation'}}) }}
                                 <span class="input-group-addon" ><span class="glyphicon glyphicon-calendar"></span></span>
                             </div>
                         </div>
+                        <label class="col-xs-12">Portes et Sièges</label>
+                        <div class="col-xs-12 col-sm-6">
+                            {{ form_widget(form2.portes,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class='col-xs-12 col-sm-6' id="id-sieges">
+                            {{ form_widget(form2.sieges,{ 'attr': {'class': 'form-control','min':'2', 'max':'15', 'placeholder':'Sièges'}}) }}
+                        </div>
+                        <div class="checkbox col-sm-12" id="id-collection">
+                            <label>{{ form_widget(form2.tVoiture,{ 'attr': { }}) }} Collection</label>
+                        </div>
+
                     </div>
                 </div>
             </div><!-- fin #data-voiture -->
@@ -57,50 +71,282 @@
                 </div>
                 <div class="panel-collapse collapse" id="ac6">
                     <div class="panel-body">
-                        <div class="well well-sm">
+                        <label class="col-xs-12">Transmission et Boîte de vitesses</label>
+                        <div class="col-xs-12 col-sm-6" id="id-transmission">
                             {{ form_widget(form2.idTransmission,{ 'attr': {'class': 'form-control'}}) }}
                         </div>
-                        <div class="well well-sm">
+                        <div class="col-xs-12 col-sm-6" id="id-nbvitesses">
+                            {{ form_widget(form2.nbVitesses,{ 'attr': {'class': 'form-control','placeholder':'Nombre de vitesses','min':'3','max':'9'}}) }}
+                        </div>
+                        <label class="col-xs-12">Cylindres</label>
+                        <div class="col-xs-12  col-sm-6" id="id-nbcylindres">
+                            {{ form_widget(form2.nbCylindres,{ 'attr': {'class': 'form-control','placeholder':'Nombre de cylindres','min':'0'}}) }}
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
                             <div class='input-group'>
                                 {{ form_widget(form2.version,{ 'attr': {'class': 'form-control'}}) }}
                                 <span class="input-group-addon" >cm³</span>
                             </div>
                         </div>
+                        <label class="col-xs-12">Poids de la voiture et type de moteur</label>
+                        <div class="col-xs-12 col-sm-6"  id="id-poids">
+                            <div class='input-group'>
+                                {{ form_widget(form2.poids,{ 'attr': {'class': 'form-control','min':'600','placeholder':'Poids à vide en (kg)'}}) }}
+                                <span class="input-group-addon" >kg</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6" id="id-tmoteur">
+                            {{ form_widget(form2.tMoteur,{ 'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <label class="col-xs-12"> Consommation</label>
+                        <div class="col-xs-12  col-sm-6" id="id-consommation">
+                            <div class='input-group'>
+                                {{ form_widget(form2.consommation,{ 'attr': {'class': 'form-control','step':'any','placeholder':'Consommation general','min':'0'}}) }}
+                                <span class="input-group-addon" >L/100km</span>
+                            </div>
+                        </div>
+                        <div class="clearfix invisible-xs"></div>
+                        <div class="col-xs-12 col-sm-6" id="id-urbain">
+                            <div class='input-group'>
+                                {{ form_widget(form2.consUrbain,{ 'attr': {'class': 'form-control','step':'any','placeholder':'Consommation urbain','min':'0'}}) }}
+                                <span class="input-group-addon" >L/100km</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6" id="id-x-urbain">
+                            <div class='input-group'>
+                                {{ form_widget(form2.consExtraUrbain,{ 'attr': {'class': 'form-control','step':'any','placeholder':'Consommation extra-urbain','min':'0'}}) }}
+                                <span class="input-group-addon" >L/100km</span>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12  col-sm-6"></div>
                     </div>
                 </div>
             </div><!-- fin #data-motor -->
-            <div class="panel panel-default" id="data-motor">
+            <div class="panel panel-default" id="etat-voiture">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#ac7"><i class="fa fa-tachometer"></i><span> ETAT<small> VOITURE</small></span><i class="fa fa-plus-square-o peq"></i></a>
+                        <a data-toggle="collapse" href="#ac7"><i class="fa fa-wrench"></i><span> ETAT<small> VOITURE</small></span><i class="fa fa-plus-square-o peq"></i></a>
                     </h4>
                 </div>
                 <div class="panel-collapse collapse" id="ac7">
                     <div class="panel-body">
-                        <div class="well well-sm">
-                            <div class='input-group'>
+                        <label class="col-xs-12">Equipement intérieur</label>
+                        <div class="col-xs-12 col-sm-6" id="id-tapisserie">
+                            {{ form_widget(form2.tapisserie,{ 'attr': {'class': 'form-control' }}) }}
+                        </div>
+                        <div class="col-xs-12 col-sm-6" id="id-colorint">
+                            {{ form_widget(form2.colorInt,{ 'attr': {'class': 'form-control' }}) }}
+                        </div>
+                        <label class="col-xs-12">Couleur extérieure </label>
+                        <div class="col-xs-12 col-sm-6" id="id-colorext">
+                            {{ form_widget(form2.colorExt,{ 'attr': {'class': 'form-control' }}) }}
+                        </div>
+                        <div class="checkbox col-xs-12 col-sm-6" id="id-metallisee">
+                            <label>{{ form_widget(form2.metallisee,{ 'attr': { }}) }} Métallisée</label>
+                        </div>
+                        <label class="col-xs-12">Kilométrage et Etat de la voiture</label>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class='input-group' id="id-km">
                                 {{ form_widget(form2.km,{ 'attr': {'class': 'form-control'}}) }}
-                                <span class="input-group-addon" >km</span>
+                                <span class="input-group-addon">km</span>
                             </div>
                         </div>
-                        <div class="well well-sm">
-                            {{ form_widget(form2.portes,{ 'attr': {'class': 'form-control'}}) }}
+                        <div class="col-xs-12 col-sm-6" id="id-etat">
+                            {{ form_widget(form2.etat,{ 'attr': {'class': 'form-control'}}) }}
                         </div>
-                        <div class='well well-sm'>
-                            {{ form_widget(form2.sieges,{ 'attr': {'class': 'form-control','min':'2', 'max':'15', 'placeholder':'Sièges'}}) }}
-                        </div>
+                    </div>
+                </div>
+            </div><!-- fin #etat-voiture -->
+            <div class="panel panel-default" id="securite">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ac8"><i class="fa fa-heartbeat"></i><span> SÉCURITÉ</span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac8">
+                    <div class="panel-body">
+                        <label class="col-xs-12">Airbags</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Airbag arrière</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Airbag avant</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Airbag conducteur</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Airbag passager</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Airbags latéraux</label>
+                        </div></div>
+                        <label class="col-xs-12">Systèmes de freinage</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">ABS</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Anti-patinage</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">ESP</label>
+                        </div></div>
+                        <label class="col-xs-12">Systèmes anti-effraction</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Alarme </label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Anti-démarrage</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Verrouillage centralisé</label>
+                        </div></div>
+                        <label class="col-xs-12">Autres systèmes</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Systèmes d'assistance</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="securite" value="">Isofix</label>
+                        </div></div>
+                    </div>
+                </div>
+            </div><!-- fin #securite -->
+            <div class="panel panel-default" id="confort">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ac9"><i class="fa fa-smile-o"></i><span> CONFORT</span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac9">
+                    <div class="panel-body">
+                        <label class="col-xs-12">Chauffages et Climatisation</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Chauffage</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Climatisation</label>
+                        </div></div>
+                        <label class="col-xs-12">Sièges</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Accoudoir</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Sièges chauffants</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Sièges électriques</label>
+                        </div></div>
+                        <label class="col-xs-12">Systèmes de stationnement</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Caméra d'aide au stationnement</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Capteurs d'aide au stationnement arrière</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Capteurs d'aide au stationnement avant</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Système d'aide au stationnement auto-adhésif</label>
+                        </div></div>
+                        <label class="col-xs-12">Aides à la conduite</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Affichage tête haute</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Assistant de démarrage en côte</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Détecteur de lumière</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Détecteur de pluie</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Direction assistée</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Start/Stop automatique</label>
+                        </div></div>
+                        <label class="col-xs-12">Portes et Vitres</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Hayon arrière eléctrique</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Pare-brise chauffant</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Porte coulissante</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Rétroviseurs latéraux électriques</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Toit ouvrant</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Toit panoramique</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Vitres électriques</label>
+                        </div></div>
+                        <label class="col-xs-12">Volant et Vitesses</label>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Palettes de changement de vitesses</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Régulateur de vitesse</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Volant chauffant</label>
+                        </div></div>
+                        <div class="col-xs-12 col-sm-6 col-md-4 checks"><div class="checkbox">
+                            <label><input type="checkbox" name="confort" value="">Volant en cuir</label>
+                        </div></div>
+                    </div>
+                </div>
+            </div><!-- fin #securite -->
+            <div class="panel panel-default" id="extras">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ac10"><i class="fa fa-star"></i><span> EXTRAS</span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac10">
+                    <div class="panel-body">
 
                     </div>
                 </div>
-            </div><!-- fin #data-motor -->
+            </div><!-- fin #securite -->
+            <div class="panel panel-default" id="autres">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#ac11"><i class="fa fa-sliders"></i><span> AUTRES</span><i class="fa fa-plus-square-o peq"></i></a>
+                    </h4>
+                </div>
+                <div class="panel-collapse collapse" id="ac11">
+                    <div class="panel-body">
 
-
+                    </div>
+                </div>
+            </div><!-- fin #securite -->
 
 
 
 
             <div class="col-xs-12">
                 {{ form_widget(form2.idAnnonce,{ 'attr': {'value' : id }}) }}
+
+
+
+
+
+
+
+
+
+
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
         </div>

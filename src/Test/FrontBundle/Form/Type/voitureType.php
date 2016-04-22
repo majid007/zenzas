@@ -76,20 +76,54 @@ class voitureType extends AbstractType
                 )
             )
             ->add('sieges','integer', array('max_length'=>2))
-            ->add('colorExt')
-            ->add('tapisserie')
-            ->add('colorInt')
-            ->add('aduana')
-            ->add('etat')
-            ->add('tVoiture')
-            ->add('tMoteur')
-            ->add('nbVitesses')
-            ->add('nbCylindres')
-            ->add('poids')
-            ->add('consommation')
-            ->add('consUrbain')
-            ->add('consExtraUrbain')
-            ->add('metallisee')
+            ->add('colorExt', 'choice', array(
+                    'choices'=>array('Beige'=>'Beige','Blanc'=>'Blanc','Bleu'=>'Bleu','Brun'=>'Brun','Gris'=>'Gris','Jaune'=>'Jaune','Noir'=>'Noir','Orange'=>'Orange','Rouge'=>'Rouge','Vert'=>'Vert','Autres'=>'Autres'),
+                    'required'=> false,
+                    'empty_value'=>'Couleur extérieure',
+                )
+            )
+            ->add('tapisserie', 'entity', array(
+                    'required' => false,
+                    'empty_value'=>'Matériau',
+                    'class'=>'TestFrontBundle:t_tapiceria',
+                    'choice_label'=>'descripcionFr',
+                )
+            )
+            ->add('colorInt', 'choice', array(
+                    'choices'=>array('Beige'=>'Beige','Blanc'=>'Blanc','Bleu'=>'Bleu','Brun'=>'Brun','Gris'=>'Gris','Jaune'=>'Jaune','Noir'=>'Noir','Orange'=>'Orange','Rouge'=>'Rouge','Vert'=>'Vert','Autres'=>'Autres'),
+                    'required'=> false,
+                    'empty_value'=>'Couleur',
+                )
+            )
+            ->add('aduana', 'entity', array(
+                    'required' => false,
+                    'empty_value'=>'Statut douanier',
+                    'class'=>'TestFrontBundle:t_vehi_aduanas',
+                    'choice_label'=>'descripcionFr',
+                )
+            )
+            ->add('etat', 'entity', array(
+                    'required' => false,
+                    'empty_value'=>'Etat',
+                    'class'=>'TestFrontBundle:t_vehi_estado',
+                    'choice_label'=>'descripcionFr',
+                )
+            )
+            ->add('tVoiture','checkbox')
+            ->add('tMoteur', 'entity', array(
+                    'required' => false,
+                    'empty_value'=>'Type de moteur (Traction)',
+                    'class'=>'TestFrontBundle:t_moteur',
+                    'choice_label'=>'descripcionFr',
+                )
+            )
+            ->add('nbVitesses','integer')
+            ->add('nbCylindres','integer')
+            ->add('poids','integer')
+            ->add('consommation','integer')
+            ->add('consUrbain','integer')
+            ->add('consExtraUrbain','integer')
+            ->add('metallisee','checkbox')
             ->add('securite')
             ->add('confort')
             ->add('infoDivertissement')
